@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_03998d">#03998d</color>
+    <color name="color_0a5953">#0a5953</color>
+    <color name="color_theme">#f78d03</color>
+
+    <color name="app_page_bkg">#fff5f5f5</color>
+    <color name="activity_bg_color">#e8e8e8</color>
+
+    <color name="bb_inActiveBottomBarItemColor">#747474</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bb_darkBackgroundColor">#212121</color>
+    <color name="bb_tabletRightBorderDark">#505050</color>
+    <color name="color_ffffff">#ffffff</color>
+
+    <color name="color_tab_text">#868686</color>
+
+    <color name="color_e90e86">#e90e86</color>
+
+    <color name="color_setting_ffffff">#FFFFFF</color>
+    <color name="color_setting_ccc8c8">#ccc8c8</color>
+    <color name="color_transparent">#00ffffff</color>
+    <color name="color_item_type_bg">#E7DCD5</color>
+    <color name="color_item_text_bg">#DBD1CA</color>
+
+    <color name="color_3f000000">#3f000000</color>
+    <color name="color_8f000000">#8f000000</color>
+    <color name="color_ff000000">#ff000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_99_d">#99dddddd</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_aaaaaa">#aaaaaa</color>
+    <color name="color_bbbbbb">#bbbbbb</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_dddddd">#dddddd</color>
+</resources>

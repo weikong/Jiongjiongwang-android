@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">囧囧汪</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_jiong">囧</string>
+    <string name="version_name">当前版本：</string>
+    <string name="can_not_find_version_name">没有发现版本号</string>
+
+    <string name="item_home_aixiangguang">爱闲逛</string>
+    <string name="item_home_butiaoshi">我不挑食</string>
+    <string name="item_home_yiqiwan">一起玩</string>
+    <string name="item_home_aimeizhixin">爱美之心</string>
+    <string name="item_home_jiongwangtuijian">囧汪推荐</string>
+</resources>
