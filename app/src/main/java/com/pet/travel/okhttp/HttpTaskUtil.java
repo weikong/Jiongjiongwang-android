@@ -1,5 +1,10 @@
 package com.pet.travel.okhttp;
 
+import com.pet.travel.config.ServerConfig;
+import com.squareup.okhttp.Request;
+
+import java.io.IOException;
+
 /**
  * Created by kongwei on 2017/3/10.
  */
@@ -47,6 +52,31 @@ public class HttpTaskUtil {
     public void QueryCustomDataTask(String url, OkHttpClientManager.StringCallback callback) {
         try {
             OkHttpClientManager.getInstance()._getAsyn(url, callback);
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (resultListener != null)
+                resultListener.onFailure(e);
+        }
+    }
+
+    public void QueryCircleRunTask(int pageNum, int pageSize, String account_id) {
+        try {
+            OkHttpClientManager.Param paramPageNum = new OkHttpClientManager.Param("pageNum", "" + pageNum);
+            OkHttpClientManager.Param paramPageSize = new OkHttpClientManager.Param("pageSize", "" + pageSize);
+            OkHttpClientManager.Param paramAccountId = new OkHttpClientManager.Param("account_id", account_id);
+            OkHttpClientManager.getInstance()._postAsyn(ServerConfig.HTTP_CIRCLE_QUERY, new OkHttpClientManager.StringCallback() {
+                @Override
+                public void onFailure(Request request, IOException e) {
+                    if (resultListener != null)
+                        resultListener.onFailure(e);
+                }
+
+                @Override
+                public void onResponse(String response) {
+                    if (resultListener != null)
+                        resultListener.onResponse(response);
+                }
+            }, paramPageNum, paramPageSize, paramAccountId);
         } catch (Exception e) {
             e.printStackTrace();
             if (resultListener != null)

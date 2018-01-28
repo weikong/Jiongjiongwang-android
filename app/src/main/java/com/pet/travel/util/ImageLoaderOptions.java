@@ -23,7 +23,7 @@ public class ImageLoaderOptions {
     public static final int MAX_IMAGE_WIDTH = 480; // The max pixels of image width
     public static final int MAX_IMAGE_HEIGHT = 800; // The max pixels of image height
     public static final int MAX_IMAGE_MEMORY_CACHE_SIZE = 2 * 1024 * 1024; // 2MB memory cache of images
-    public static final int MAX_IMAGE_DISK_CACHE_SIZE = 200 * 1024 * 1024; // 200MB SD card cache of images
+    public static final int MAX_IMAGE_DISK_CACHE_SIZE = 400 * 1024 * 1024; // 400MB SD card cache of images
     public static final int MAX_IMAGE_DISK_FILE_COUNT = 400; // SD card cache for 400 max images
 
     /**

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.pet.travel.R;
 import com.pet.travel.bean.CircleBean;
+import com.pet.travel.config.ServerConfig;
 import com.pet.travel.util.ImageLoaderOptions;
 
 import java.util.ArrayList;
@@ -80,6 +81,22 @@ public class CircleAdapter extends BaseAdapter {
             } else
                 viewHolder.tvAddress.setVisibility(View.GONE);
             ImageLoader.getInstance().displayImage("", viewHolder.ivHeader, ImageLoaderOptions.optionsLanuchHeader);
+
+            String photos = "";
+            if (!TextUtils.isEmpty(item.getThumbs()))
+                photos = item.getThumbs();
+            else
+                photos = item.getPhotos();
+            if (!TextUtils.isEmpty(photos)) {
+                String url = photos.split(",")[0];
+                if (!TextUtils.isEmpty(url)) {
+                    url = url.trim();
+                    if (!url.startsWith("http://"))
+                        photos = String.format(ServerConfig.HTTP_DOWNLOAD_FILE_2, url);
+                }
+            }
+            ImageLoader.getInstance().displayImage(photos, viewHolder.ivContent, ImageLoaderOptions.optionsLanuchHeader);
+
         }
         return convertView;
     }
@@ -99,7 +116,7 @@ public class CircleAdapter extends BaseAdapter {
             this.tvTime = (TextView) view.findViewById(R.id.tv_time);
             this.tvDesc = (TextView) view.findViewById(R.id.tv_desc);
             this.tvAddress = (TextView) view.findViewById(R.id.tv_address);
-            this.layout_imgs = (LinearLayout)view.findViewById(R.id.layout_imgs);
+            this.layout_imgs = (LinearLayout) view.findViewById(R.id.layout_imgs);
             this.ivContent = (ImageView) view.findViewById(R.id.iv_content);
         }
     }

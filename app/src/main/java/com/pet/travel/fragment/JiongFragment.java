@@ -6,15 +6,19 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.alibaba.fastjson.JSON;
 import com.pet.travel.R;
 import com.pet.travel.adapter.CircleAdapter;
 import com.pet.travel.bean.CircleBean;
+import com.pet.travel.bean.ResultTaskBean;
+import com.pet.travel.okhttp.HttpTaskUtil;
 import com.pet.travel.view.jiong.JiongHeaderView;
 
 import java.util.ArrayList;
@@ -23,7 +27,6 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link JiongFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link JiongFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -41,6 +44,8 @@ public class JiongFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private ListView listView;
     private CircleAdapter adapter;
+
+    private HttpTaskUtil httpTaskUtil;
 
     public JiongFragment() {
         // Required empty public constructor
@@ -80,7 +85,8 @@ public class JiongFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_jiong, container, false);
         initView(view);
-        loadData();
+//        loadData();
+        loadTaskData();
         Log.i("JiongFragment", "onCreateView");
         return view;
     }
@@ -135,4 +141,44 @@ public class JiongFragment extends Fragment {
         super.onDetach();
         Log.i("JiongFragment", "onDetach");
     }
+
+
+    private void loadTaskData() {
+        if (httpTaskUtil == null) {
+            httpTaskUtil = new HttpTaskUtil();
+            httpTaskUtil.setResultListener(resultListener);
+        }
+        httpTaskUtil.QueryCircleRunTask(1, 100, "3");
+    }
+
+    HttpTaskUtil.ResultListener resultListener = new HttpTaskUtil.ResultListener() {
+        @Override
+        public void onResponse(String response) {
+            try {
+                ResultTaskBean bean = JSON.parseObject(response, ResultTaskBean.class);
+                if (bean != null && bean.code == 1) {
+                    if (!TextUtils.isEmpty(bean.data)) {
+                        List<CircleBean> list = JSON.parseArray(bean.data, CircleBean.class);
+                        if (list == null || list.size() == 0)
+                            return;
+                        if (adapter.getCount() > 0) {
+                            CircleBean circleBean1 = adapter.getItem(0);
+                            CircleBean circleBean2 = list.get(0);
+                            if (circleBean1 != null && circleBean2 != null && circleBean1.getId() == circleBean2.getId()) {
+                                return;
+                            }
+                        }
+                        adapter.setData(list);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            } catch (Exception e) {
+            } finally {
+            }
+        }
+
+        @Override
+        public void onFailure(Exception e) {
+        }
+    };
 }
