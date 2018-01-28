@@ -95,7 +95,7 @@ public class CircleAdapter extends BaseAdapter {
                         photos = String.format(ServerConfig.HTTP_DOWNLOAD_FILE_2, url);
                 }
             }
-            ImageLoader.getInstance().displayImage(photos, viewHolder.ivContent, ImageLoaderOptions.optionsLanuchHeader);
+            ImageLoader.getInstance().displayImage(photos, viewHolder.ivContent, ImageLoaderOptions.optionsAdapterDefault);
 
         }
         return convertView;

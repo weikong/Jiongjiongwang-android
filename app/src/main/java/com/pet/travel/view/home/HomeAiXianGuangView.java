@@ -8,6 +8,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.pet.travel.R;
+import com.pet.travel.bean.ProductBean;
+
+import java.util.List;
 
 /**
  * Created by xinzhendi-031 on 2018/1/26.
@@ -35,7 +38,7 @@ public class HomeAiXianGuangView extends RelativeLayout {
         View View = LayoutInflater.from(context).inflate(R.layout.view_home_aixianguang, this);
     }
 
-    public void setData(Object object) {
+    public void setData(List<ProductBean> list) {
 
     }
 }

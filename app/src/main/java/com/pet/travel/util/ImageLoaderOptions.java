@@ -38,6 +38,11 @@ public class ImageLoaderOptions {
     public static DisplayImageOptions optionsLanuchHeader = getDisplayImageScaleOptions(R.mipmap.ic_launcher);
 
     /**
+     * Adapter头像
+     */
+    public static DisplayImageOptions optionsAdapterDefault = getDisplayImageScaleOptions(R.mipmap.home_item_bg);
+
+    /**
      * Obtain the ImageLoader display parameters
      *
      * @param imageResId         The resource ID of image
