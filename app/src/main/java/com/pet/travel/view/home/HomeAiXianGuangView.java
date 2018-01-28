@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class HomeAiXianGuangView extends RelativeLayout {
 
-    private LinearLayout layout1, layout2, layout3, layout4, layout5;
+    private LinearLayout layout_content;
 
     public HomeAiXianGuangView(Context context) {
         super(context);
@@ -36,6 +36,7 @@ public class HomeAiXianGuangView extends RelativeLayout {
 
     private void initView(Context context) {
         View View = LayoutInflater.from(context).inflate(R.layout.view_home_aixianguang, this);
+        layout_content = (LinearLayout) View.findViewById(R.id.layout_content);
     }
 
     public void setData(List<ProductBean> list) {
