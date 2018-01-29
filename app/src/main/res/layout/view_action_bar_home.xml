@@ -13,32 +13,30 @@
         android:paddingRight="@dimen/margin_12"
         android:src="@mipmap/icon_scan" />
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_action_fenlei"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:gravity="center"
         android:paddingLeft="@dimen/margin_12"
         android:paddingRight="@dimen/margin_12"
-        android:text="分类"
-        android:textColor="@color/color_ffffff" />
+        android:src="@mipmap/b_x" />
 
     <RelativeLayout
         android:id="@+id/layout_action_search"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_30"
+        android:layout_height="@dimen/margin_26"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/tv_action_fenlei"
         android:layout_toRightOf="@+id/iv_action_scan"
         android:background="@drawable/bg_rectangle_ffffff">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/margin_18"
+            android:layout_height="@dimen/margin_18"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginLeft="@dimen/margin_6"
             android:src="@mipmap/actionbar_img_btn_search_press" />
     </RelativeLayout>
 

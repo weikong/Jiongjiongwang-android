@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.pet.travel.R;
-import com.pet.travel.bean.ProductBean;
+import com.pet.travel.bean.ProductCategoryBean;
 
 import java.util.List;
 
@@ -39,7 +39,15 @@ public class HomeAiXianGuangView extends RelativeLayout {
         layout_content = (LinearLayout) View.findViewById(R.id.layout_content);
     }
 
-    public void setData(List<ProductBean> list) {
-
+    public void setData(List<ProductCategoryBean> list) {
+        layout_content.removeAllViews();
+        if (list == null || list.size() == 0)
+            return;
+        Item2View item2View1 = new Item2View(getContext());
+        Item2View item2View2 = new Item2View(getContext());
+        item2View1.setData(list.subList(0,2));
+        item2View1.setData(list.subList(2,4));
+        layout_content.addView(item2View1);
+        layout_content.addView(item2View2);
     }
 }

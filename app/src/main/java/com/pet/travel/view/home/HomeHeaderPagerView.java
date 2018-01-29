@@ -23,6 +23,7 @@ public class HomeHeaderPagerView extends RelativeLayout {
 
     private ViewPager viewPager;
     private BaseViewPagerAdapter adapter;
+    private int currentPage = 0;
 
     public HomeHeaderPagerView(Context context) {
         super(context);
@@ -44,13 +45,30 @@ public class HomeHeaderPagerView extends RelativeLayout {
         viewPager = (ViewPager) View.findViewById(R.id.viewpager);
         adapter = new BaseViewPagerAdapter();
         viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(currentPage);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                currentPage = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         loadData();
     }
 
-    public void loadData(){
+    public void loadData() {
         List<ImageView> list = new ArrayList<>();
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UITools.dip2px(getContext(),160));
-        for(int i=0;i<3;i++){
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UITools.dip2px(getContext(), 160));
+        for (int i = 0; i < 3; i++) {
             ImageView imageView = new ImageView(getContext());
             imageView.setLayoutParams(params);
             imageView.setImageResource(R.mipmap.bg_guide_p1);
@@ -59,5 +77,19 @@ public class HomeHeaderPagerView extends RelativeLayout {
         }
         adapter.setViewList(list);
         adapter.notifyDataSetChanged();
+    }
+
+    public void autoChangeCurrentPage() {
+        try {
+            if (adapter.getCount() > 0) {
+                if (currentPage >= adapter.getCount() - 1)
+                    currentPage = 0;
+                else
+                    currentPage++;
+                viewPager.setCurrentItem(currentPage);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

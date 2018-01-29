@@ -8,13 +8,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.pet.travel.R;
+import com.pet.travel.bean.ProductCategoryBean;
+
+import java.util.List;
 
 /**
  * Created by xinzhendi-031 on 2018/1/26.
  */
 public class HomeBuTiaoShiView extends RelativeLayout {
 
-    private LinearLayout layout1, layout2, layout3, layout4, layout5;
+    private LinearLayout layout_content;
 
     public HomeBuTiaoShiView(Context context) {
         super(context);
@@ -33,9 +36,18 @@ public class HomeBuTiaoShiView extends RelativeLayout {
 
     private void initView(Context context) {
         View View = LayoutInflater.from(context).inflate(R.layout.view_home_butiaoshi, this);
+        layout_content = (LinearLayout) View.findViewById(R.id.layout_content);
     }
 
-    public void setData(Object object) {
-
+    public void setData(List<ProductCategoryBean> list) {
+        layout_content.removeAllViews();
+        if (list == null || list.size() == 0)
+            return;
+        Item2View item2View = new Item2View(getContext());
+        Item4View item4View = new Item4View(getContext());
+        item2View.setData(list.subList(0,2));
+        item4View.setData(list.subList(2,6));
+        layout_content.addView(item2View);
+        layout_content.addView(item4View);
     }
 }

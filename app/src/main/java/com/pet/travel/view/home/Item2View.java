@@ -9,8 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pet.travel.R;
-import com.pet.travel.bean.ProductBean;
+import com.pet.travel.bean.ProductCategoryBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +22,7 @@ public class Item2View extends LinearLayout implements View.OnClickListener {
     private LinearLayout layout1, layout2;
     private TextView tv_title_l, tv_desc_l, tv_title_r, tv_desc_r;
     private ImageView iv_l1, iv_l2, iv_r1, iv_r2;
+    private List<ProductCategoryBean> datas = new ArrayList<>();
 
     public Item2View(Context context) {
         super(context);
@@ -53,8 +55,13 @@ public class Item2View extends LinearLayout implements View.OnClickListener {
         layout2.setOnClickListener(this);
     }
 
-    public void setData(List<ProductBean> list) {
-
+    public void setData(List<ProductCategoryBean> list) {
+        datas.clear();
+        if (list == null && list.size() < 2)
+            return;
+        datas.addAll(list);
+        ProductCategoryBean bean1 = list.get(0);
+        ProductCategoryBean bean2 = list.get(1);
     }
 
     @Override

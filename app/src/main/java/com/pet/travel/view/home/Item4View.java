@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pet.travel.R;
-import com.pet.travel.bean.ProductBean;
+import com.pet.travel.bean.ProductCategoryBean;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class Item4View extends LinearLayout implements View.OnClickListener {
     }
 
     private void initView(Context context) {
-        View View = LayoutInflater.from(context).inflate(R.layout.view_item_two, this);
+        View View = LayoutInflater.from(context).inflate(R.layout.view_item_four, this);
         layout1 = (LinearLayout) View.findViewById(R.id.layout_1);
         layout2 = (LinearLayout) View.findViewById(R.id.layout_2);
         layout3 = (LinearLayout) View.findViewById(R.id.layout_3);
@@ -62,7 +62,7 @@ public class Item4View extends LinearLayout implements View.OnClickListener {
         layout4.setOnClickListener(this);
     }
 
-    public void setData(List<ProductBean> list) {
+    public void setData(List<ProductCategoryBean> list) {
 
     }
 

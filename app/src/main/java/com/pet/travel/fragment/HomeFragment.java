@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import com.pet.travel.R;
 import com.pet.travel.adapter.CircleAdapter;
-import com.pet.travel.bean.CircleBean;
+import com.pet.travel.bean.ProductCategoryBean;
 import com.pet.travel.view.home.HomeAiMeiZhiXinView;
 import com.pet.travel.view.home.HomeAiXianGuangView;
 import com.pet.travel.view.home.HomeBuTiaoShiView;
@@ -25,6 +25,8 @@ import com.pet.travel.view.home.HomeYiQiWanView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +56,9 @@ public class HomeFragment extends Fragment {
     private HomeYiQiWanView homeYiQiWanView;
     private HomeAiMeiZhiXinView homeAiMeiZhiXinView;
     private HomeJiongWangTuiJianView homeJiongWangTuiJianView;
+    private Timer mTimer;
+    private TimerTask mTimerTask;
+    private boolean isTimerPause = false;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -112,6 +117,7 @@ public class HomeFragment extends Fragment {
                 handler.sendEmptyMessageDelayed(1, 2000);
             }
         });
+        swipeRefreshLayout.setEnabled(false);
         listView = (ListView) view.findViewById(R.id.listview);
         listView.addHeaderView(homeHeaderPagerView = new HomeHeaderPagerView(getActivity()));
         listView.addHeaderView(homeTabView = new HomeTabView(getActivity()));
@@ -124,14 +130,29 @@ public class HomeFragment extends Fragment {
 
         adapter = new CircleAdapter(getActivity());
         listView.setAdapter(adapter);
+
+        loadDataGuang();
+        loadDataFood();
+
+        initTimer();
     }
 
-    public void loadData() {
-        List<CircleBean> datas = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            datas.add(null);
+    private void loadDataGuang() {
+        List<ProductCategoryBean> list = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            ProductCategoryBean bean = new ProductCategoryBean();
+            list.add(bean);
         }
-        adapter.setData(datas);
+        homeAiXianGuangView.setData(list);
+    }
+
+    private void loadDataFood() {
+        List<ProductCategoryBean> list = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            ProductCategoryBean bean = new ProductCategoryBean();
+            list.add(bean);
+        }
+        homeBuTiaoShiView.setData(list);
     }
 
     private Handler handler = new Handler() {
@@ -141,10 +162,54 @@ public class HomeFragment extends Fragment {
                 case 1:
                     swipeRefreshLayout.setRefreshing(false);
                     break;
+                case 2:
+                    homeHeaderPagerView.autoChangeCurrentPage();
+                    break;
             }
         }
     };
 
+    private void initTimer() {
+        try {
+            if (mTimer == null)
+                mTimer = new Timer();
+            if (mTimerTask == null)
+                mTimerTask = new TimerTask() {
+                    @Override
+                    public void run() {
+                        if (!isTimerPause) {
+                            handler.sendEmptyMessage(2);
+                        }
+                    }
+                };
+            mTimer.schedule(mTimerTask, 6 * 1000, 6 * 1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void unintTimer() {
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
+        if (mTimerTask != null) {
+            mTimerTask.cancel();
+            mTimerTask = null;
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        isTimerPause = false;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isTimerPause = true;
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -156,5 +221,6 @@ public class HomeFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         Log.i("HomeFragment", "onDetach");
+        unintTimer();
     }
 }
