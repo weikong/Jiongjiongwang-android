@@ -75,7 +75,7 @@
                     android:id="@+id/iv_jiong"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@mipmap/dog_open" />
             </LinearLayout>
 
             <LinearLayout

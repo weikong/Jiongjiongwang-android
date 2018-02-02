@@ -1,6 +1,8 @@
 package com.pet.travel.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -35,6 +37,22 @@ public class MainActivity extends BaseUIActivity {
         initView();
     }
 
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            Message message = Message.obtain();
+            message.what = 1;
+            message.arg1 = 2;
+            handler.sendMessageDelayed(message,1000);
+        }
+    }
+
     private void initView() {
         layoutHome = (LinearLayout) findViewById(R.id.layout_home);
         layoutJiong = (LinearLayout) findViewById(R.id.layout_jiong);
@@ -64,6 +82,7 @@ public class MainActivity extends BaseUIActivity {
                     return;
                 setToolGray();
                 ivHome.setColorFilter(getResources().getColor(R.color.color_theme));
+                ivJiong.setImageResource(R.mipmap.dog_open_left);
                 viewPager.setCurrentItem(0, false);
             }
         });
@@ -74,7 +93,12 @@ public class MainActivity extends BaseUIActivity {
                     return;
                 setToolGray();
                 ivJiong.clearColorFilter();
+                ivJiong.setImageResource(R.mipmap.dog_open);
                 viewPager.setCurrentItem(1, false);
+                Message message = Message.obtain();
+                message.what = 1;
+                message.arg1 = 4;
+                handler.sendMessageDelayed(message,400);
             }
         });
         layoutMe.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +108,7 @@ public class MainActivity extends BaseUIActivity {
                     return;
                 setToolGray();
                 ivMe.setColorFilter(getResources().getColor(R.color.color_theme));
+                ivJiong.setImageResource(R.mipmap.dog_open_right);
                 viewPager.setCurrentItem(2, false);
             }
         });
@@ -94,6 +119,34 @@ public class MainActivity extends BaseUIActivity {
         ivJiong.setColorFilter(getResources().getColor(R.color.transparent_99_d));
         ivMe.setColorFilter(getResources().getColor(R.color.color_item_text_bg));
     }
+
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 1:
+                    int count = msg.arg1;
+                    for (int i=0;i<count;i++){
+                        if (i == 0)
+                            this.sendEmptyMessageDelayed(2,0);
+                        else if (i == 1)
+                            this.sendEmptyMessageDelayed(3,200);
+                        else if (i == 2)
+                            this.sendEmptyMessageDelayed(2,400);
+                        else if (i == 3)
+                            this.sendEmptyMessageDelayed(3,600);
+                    }
+                    break;
+                case 2:
+                    ivJiong.setImageResource(R.mipmap.dog_close);
+                    break;
+                case 3:
+                    ivJiong.setImageResource(R.mipmap.dog_open);
+                    break;
+            }
+        }
+    };
 
     /**
      * 初始化FragmentPagerAdapter
