@@ -43,6 +43,11 @@ public class ImageLoaderOptions {
     public static DisplayImageOptions optionsAdapterDefault = getDisplayImageScaleOptions(R.mipmap.home_item_bg);
 
     /**
+     * Adapter Item头像
+     */
+    public static DisplayImageOptions optionsItemDefault = getDisplayImageScaleOptions(R.drawable.bg_rectangle_activty);
+
+    /**
      * Obtain the ImageLoader display parameters
      *
      * @param imageResId         The resource ID of image

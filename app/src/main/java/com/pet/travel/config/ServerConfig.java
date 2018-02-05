@@ -13,11 +13,11 @@ public class ServerConfig {
     /**
      * 公司 IP
      */
-    public static String HTTP_ROOT = "http://172.16.0.138:9090/";
+//    public static String HTTP_ROOT = "http://172.16.0.138:9090/";
     /**
      * 阿里云
      */
-//    public static String HTTP_ROOT = "http://120.78.81.9/";
+    public static String HTTP_ROOT = "http://120.78.81.9/";
 
     /**
      * 图片下载

@@ -102,7 +102,8 @@ public class JiongFragment extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                handler.sendEmptyMessageDelayed(1, 2000);
+                loadTaskData();
+//                handler.sendEmptyMessageDelayed(1, 2000);
             }
         });
         listView = (ListView) view.findViewById(R.id.listview);
@@ -174,6 +175,7 @@ public class JiongFragment extends Fragment {
                 }
             } catch (Exception e) {
             } finally {
+                handler.sendEmptyMessageDelayed(1, 200);
             }
         }
 
