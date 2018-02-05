@@ -15,16 +15,16 @@ public class HttpTaskUtil {
 
     private HttpTaskUtil mInstance;
 
-//    public HttpTaskUtil getInstance() {
-//        if (mInstance == null) {
-//            synchronized (HttpTaskUtil.class) {
-//                if (mInstance == null) {
-//                    mInstance = new HttpTaskUtil();
-//                }
-//            }
-//        }
-//        return mInstance;
-//    }
+    public HttpTaskUtil getInstance() {
+        if (mInstance == null) {
+            synchronized (HttpTaskUtil.class) {
+                if (mInstance == null) {
+                    mInstance = new HttpTaskUtil();
+                }
+            }
+        }
+        return mInstance;
+    }
 
     public interface ResultListener {
         public void onResponse(String response);
@@ -35,6 +35,29 @@ public class HttpTaskUtil {
     public HttpTaskUtil setResultListener(ResultListener resultListener) {
         this.resultListener = resultListener;
         return this;
+    }
+
+    public void QueryPetServiceTask(int type,OkHttpClientManager.StringCallback callback) {
+        try {
+            OkHttpClientManager.Param param = new OkHttpClientManager.Param("type", ""+type);
+            OkHttpClientManager.getInstance()._postAsyn(ServerConfig.HTTP_SERVICE_QUERY, callback != null ? callback : new OkHttpClientManager.StringCallback() {
+                @Override
+                public void onFailure(Request request, IOException e) {
+                    if (resultListener != null)
+                        resultListener.onFailure(e);
+                }
+
+                @Override
+                public void onResponse(String response) {
+                    if (resultListener != null)
+                        resultListener.onResponse(response);
+                }
+            }, param);
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (resultListener != null)
+                resultListener.onFailure(e);
+        }
     }
 
     public void LoginTask(String url, String account, String password, OkHttpClientManager.StringCallback callback) {

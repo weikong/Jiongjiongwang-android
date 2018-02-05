@@ -79,6 +79,15 @@
         </activity>
         <activity android:name=".activity.ProductCategoryActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.service.PetBeautyActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.service.PetFosterCareActivity"
+        android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.service.PetDatingActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.service.PetLookForActivity"
+            android:screenOrientation="portrait"></activity>
+
     </application>
 
 </manifest>

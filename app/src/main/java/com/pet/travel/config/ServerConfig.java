@@ -13,11 +13,11 @@ public class ServerConfig {
     /**
      * 公司 IP
      */
-//    public static String HTTP_ROOT = "http://172.16.0.138:9090/";
+    public static String HTTP_ROOT = "http://172.16.0.138:9090/";
     /**
      * 阿里云
      */
-    public static String HTTP_ROOT = "http://120.78.81.9/";
+//    public static String HTTP_ROOT = "http://120.78.81.9/";
 
     /**
      * 图片下载
@@ -28,6 +28,13 @@ public class ServerConfig {
      * 查询跑友圈
      */
     public static String HTTP_CIRCLE_QUERY = HTTP_ROOT + "circle/query";
+
+    /**
+     * 查询服务
+     * type=8:美容
+     * type=27:寄养
+     */
+    public static String HTTP_SERVICE_QUERY = HTTP_ROOT + "pet_service/query_by_type";
 
 
 }

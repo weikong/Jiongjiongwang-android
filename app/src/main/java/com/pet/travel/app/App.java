@@ -8,6 +8,7 @@ import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.pet.travel.util.DisplayUtil;
 import com.pet.travel.util.ImageLoaderOptions;
 
 
@@ -28,6 +29,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        DisplayUtil.displayScreen(this);
         initImageLoader(this);
     }
 

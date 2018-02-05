@@ -82,7 +82,7 @@ public class MainActivity extends BaseUIActivity {
                     return;
                 setToolGray();
                 ivHome.setColorFilter(getResources().getColor(R.color.color_theme));
-                ivJiong.setImageResource(R.mipmap.dog_open_left);
+                handler.sendEmptyMessageDelayed(4,100);
                 viewPager.setCurrentItem(0, false);
             }
         });
@@ -97,8 +97,8 @@ public class MainActivity extends BaseUIActivity {
                 viewPager.setCurrentItem(1, false);
                 Message message = Message.obtain();
                 message.what = 1;
-                message.arg1 = 4;
-                handler.sendMessageDelayed(message,400);
+                message.arg1 = 2;
+                handler.sendMessage(message);
             }
         });
         layoutMe.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +108,7 @@ public class MainActivity extends BaseUIActivity {
                     return;
                 setToolGray();
                 ivMe.setColorFilter(getResources().getColor(R.color.color_theme));
-                ivJiong.setImageResource(R.mipmap.dog_open_right);
+                handler.sendEmptyMessageDelayed(5,100);
                 viewPager.setCurrentItem(2, false);
             }
         });
@@ -143,6 +143,12 @@ public class MainActivity extends BaseUIActivity {
                     break;
                 case 3:
                     ivJiong.setImageResource(R.mipmap.dog_open);
+                    break;
+                case 4:
+                    ivJiong.setImageResource(R.mipmap.dog_open_left);
+                    break;
+                case 5:
+                    ivJiong.setImageResource(R.mipmap.dog_open_right);
                     break;
             }
         }
