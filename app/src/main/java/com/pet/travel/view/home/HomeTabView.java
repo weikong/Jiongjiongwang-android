@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.pet.travel.R;
+import com.pet.travel.activity.WebActivity;
 import com.pet.travel.activity.service.PetBeautyActivity;
 import com.pet.travel.activity.service.PetDatingActivity;
 import com.pet.travel.activity.service.PetFosterCareActivity;
@@ -60,6 +61,7 @@ public class HomeTabView extends RelativeLayout implements View.OnClickListener 
                 PetFosterCareActivity.startActivity(getContext());
                 break;
             case R.id.layout_tab_3:
+                WebActivity.startActivity(getContext());
                 break;
             case R.id.layout_tab_4:
                 PetDatingActivity.startActivity(getContext());

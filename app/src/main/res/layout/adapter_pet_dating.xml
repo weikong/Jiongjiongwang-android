@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_5"
+        android:background="@drawable/bg_rectangle_card_item_selector"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_4">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/menu_bg_3" />
+
+        <ImageView
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_circle_theme"
+            android:scaleType="centerCrop" />
+
+        <com.pet.travel.view.imageview.RoundAngleImageView
+            android:id="@+id/iv_header"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_2"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:roundHeight="@dimen/margin_50"
+            app:roundWidth="@dimen/margin_50" />
+
+        <TextView
+            android:id="@+id/tv_pet_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/iv_header"
+            android:layout_below="@+id/iv_header"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:background="@drawable/bg_rectangle_1"
+            android:paddingBottom="@dimen/margin_2"
+            android:paddingLeft="@dimen/margin_6"
+            android:paddingRight="@dimen/margin_6"
+            android:paddingTop="@dimen/margin_2"
+            android:text="金毛"
+            android:textColor="@color/color_ffffff"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_pet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_70"
+            android:layout_toLeftOf="@+id/iv_header"
+            android:background="@drawable/bg_rectangle_2"
+            android:paddingBottom="@dimen/margin_2"
+            android:paddingLeft="@dimen/margin_6"
+            android:paddingRight="@dimen/margin_6"
+            android:paddingTop="@dimen/margin_2"
+            android:text="芒果"
+            android:textColor="@color/color_ffffff"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_pet_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_30"
+            android:layout_toLeftOf="@+id/iv_header"
+            android:background="@drawable/bg_rectangle_3"
+            android:paddingBottom="@dimen/margin_2"
+            android:paddingLeft="@dimen/margin_6"
+            android:paddingRight="@dimen/margin_6"
+            android:paddingTop="@dimen/margin_2"
+            android:text="2.0歲"
+            android:textColor="@color/color_ffffff"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_pet_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_toRightOf="@+id/iv_header"
+            android:background="@drawable/bg_rectangle_4"
+            android:paddingBottom="@dimen/margin_2"
+            android:paddingLeft="@dimen/margin_6"
+            android:paddingRight="@dimen/margin_6"
+            android:paddingTop="@dimen/margin_2"
+            android:text="公"
+            android:textColor="@color/color_ffffff"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_pet_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_50"
+            android:layout_toRightOf="@+id/iv_header"
+            android:background="@drawable/bg_rectangle_5"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:paddingBottom="@dimen/margin_2"
+            android:paddingLeft="@dimen/margin_6"
+            android:paddingRight="@dimen/margin_6"
+            android:paddingTop="@dimen/margin_2"
+            android:text="绝对直男，来者不拒"
+            android:textColor="@color/color_ffffff"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

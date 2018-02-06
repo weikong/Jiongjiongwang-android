@@ -43,6 +43,11 @@ public class ImageLoaderOptions {
     public static DisplayImageOptions optionsAdapterDefault = getDisplayImageScaleOptions(R.mipmap.home_item_bg);
 
     /**
+     * Adapter头像
+     */
+    public static DisplayImageOptions optionsAdapterCornerDefault = getDisplayImageOptions(R.mipmap.home_item_bg,DisplayUtil.dp2px(_CORNER_RADIUS_100));
+
+    /**
      * Adapter Item头像
      */
     public static DisplayImageOptions optionsItemDefault = getDisplayImageScaleOptions(R.drawable.bg_rectangle_activty);

@@ -6,6 +6,7 @@
     <color name="color_03998d">#03998d</color>
     <color name="color_0a5953">#0a5953</color>
     <color name="color_theme">#f78d03</color>
+    <color name="color_theme_99">#99f78d03</color>
 
     <color name="app_page_bkg">#fff5f5f5</color>
     <color name="activity_bg_color">#e8e8e8</color>
@@ -38,4 +39,13 @@
     <color name="color_bbbbbb">#bbbbbb</color>
     <color name="color_cccccc">#cccccc</color>
     <color name="color_dddddd">#dddddd</color>
+
+    <color name="color_ED0779">#ED0779</color>
+    <color name="color_E758C7">#E758C7</color>
+    <color name="color_FD0077">#FD0077</color>
+    <color name="color_FF00FD8B">#FF00FD8B</color>
+    <color name="color_FFFD4C00">#FFFD4C00</color>
+    <color name="color_FF0098FD">#FF0098FD</color>
+    <color name="color_FFBE00FD">#FFBE00FD</color>
+    <color name="color_FF00E8FD">#FF00E8FD</color>
 </resources>

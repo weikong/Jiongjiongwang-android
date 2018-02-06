@@ -37,9 +37,33 @@ public class HttpTaskUtil {
         return this;
     }
 
-    public void QueryPetServiceTask(int type,OkHttpClientManager.StringCallback callback) {
+    public void QueryDataTask(String url,int pageNum,int pageSize, OkHttpClientManager.StringCallback callback) {
         try {
-            OkHttpClientManager.Param param = new OkHttpClientManager.Param("type", ""+type);
+            OkHttpClientManager.Param pageNumParam = new OkHttpClientManager.Param("pageNum", "" + pageNum);
+            OkHttpClientManager.Param pageSizeParam = new OkHttpClientManager.Param("pageSize", "" + pageSize);
+            OkHttpClientManager.getInstance()._postAsyn(url, callback != null ? callback : new OkHttpClientManager.StringCallback() {
+                @Override
+                public void onFailure(Request request, IOException e) {
+                    if (resultListener != null)
+                        resultListener.onFailure(e);
+                }
+
+                @Override
+                public void onResponse(String response) {
+                    if (resultListener != null)
+                        resultListener.onResponse(response);
+                }
+            }, pageNumParam,pageSizeParam);
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (resultListener != null)
+                resultListener.onFailure(e);
+        }
+    }
+
+    public void QueryPetServiceTask(int type, OkHttpClientManager.StringCallback callback) {
+        try {
+            OkHttpClientManager.Param param = new OkHttpClientManager.Param("type", "" + type);
             OkHttpClientManager.getInstance()._postAsyn(ServerConfig.HTTP_SERVICE_QUERY, callback != null ? callback : new OkHttpClientManager.StringCallback() {
                 @Override
                 public void onFailure(Request request, IOException e) {

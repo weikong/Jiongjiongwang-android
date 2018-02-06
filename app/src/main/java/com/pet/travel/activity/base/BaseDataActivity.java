@@ -17,6 +17,9 @@ import java.util.List;
 public class BaseDataActivity extends FragmentActivity {
     protected String TAG = this.getClass().getSimpleName();
 
+    protected final int pageSize = 20;
+    protected int pageNum = 1;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -25,8 +25,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
+            android:textSize="12sp"
             android:text="美容" />
     </LinearLayout>
 
@@ -49,8 +50,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
+            android:textSize="12sp"
             android:text="寄养" />
     </LinearLayout>
 
@@ -73,8 +75,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
+            android:textSize="12sp"
             android:text="红十字" />
     </LinearLayout>
 
@@ -97,8 +100,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
+            android:textSize="12sp"
             android:text="婚配" />
     </LinearLayout>
 
@@ -121,9 +125,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
-            android:text="帮寻" />
+            android:textSize="12sp"
+            android:text="寻犬" />
     </LinearLayout>
 
 </LinearLayout>

@@ -88,6 +88,8 @@ public class PetBeautyAdapter extends BaseAdapter {
                     url = url.trim();
                     if (!url.startsWith("http://"))
                         photos = String.format(ServerConfig.HTTP_DOWNLOAD_FILE_2, url);
+                    else
+                        photos = url;
                 }
             }
         }

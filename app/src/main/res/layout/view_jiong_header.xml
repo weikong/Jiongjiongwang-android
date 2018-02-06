@@ -8,15 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="210dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/menu_bg_1" />
+        android:src="@mipmap/menu_bg_2" />
 
     <ImageView
         android:id="@+id/iv_header_me"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="180dp"
+        android:padding="@dimen/margin_4"
         android:background="@drawable/bg_circle_theme"
-        android:src="@mipmap/main_bg11" />
+        android:src="@mipmap/ic_launcher" />
 </RelativeLayout>

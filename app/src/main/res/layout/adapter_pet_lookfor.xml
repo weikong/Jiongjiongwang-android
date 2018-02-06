@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_10">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="2018-02-06 15:15" />
+
+    <RelativeLayout
+        android:id="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="@dimen/margin_2">
+
+        <RelativeLayout
+            android:id="@+id/layout_image"
+            android:layout_width="80dp"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/iv_content"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_rectangle_activty"
+                android:scaleType="centerCrop"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:alpha="0.6"
+                android:src="@mipmap/bg_tips" />
+
+            <TextView
+                android:id="@+id/tv_tip_lookfor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="0.5dp"
+                android:layout_marginTop="12.5dp"
+                android:rotation="41.5"
+                android:text="@string/txt_tip_lookfor"
+                android:textColor="@color/color_ffffff"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_4"
+            android:layout_toRightOf="@+id/layout_image"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="种类：哈士奇" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="名字：牛奶（公 - 1.5岁）" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_2"
+                android:text="遗失地址：成都市高新区神仙树缤纷广场" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
