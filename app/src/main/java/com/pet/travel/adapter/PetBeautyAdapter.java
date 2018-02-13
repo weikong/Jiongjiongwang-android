@@ -1,23 +1,18 @@
 package com.pet.travel.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.pet.travel.R;
 import com.pet.travel.bean.PetServiceBean;
 import com.pet.travel.config.ServerConfig;
-import com.pet.travel.util.DisplayUtil;
 import com.pet.travel.util.ImageLoaderOptions;
 
 import java.util.ArrayList;
@@ -93,35 +88,36 @@ public class PetBeautyAdapter extends BaseAdapter {
                 }
             }
         }
-        ImageLoader.getInstance().displayImage(photos, viewHolder.ivContent, ImageLoaderOptions.optionsAdapterDefault, new ImageLoadingListener() {
-            @Override
-            public void onLoadingStarted(String s, View view) {
-
-            }
-
-            @Override
-            public void onLoadingFailed(String s, View view, FailReason failReason) {
-
-            }
-
-            @Override
-            public void onLoadingComplete(String s, View view, Bitmap bitmap) {
-                if (bitmap == null)
-                    return;
-                int width = bitmap.getWidth();
-                int height = bitmap.getHeight();
-                int bWidth = DisplayUtil.screenWidth - DisplayUtil.dp2px(2 * 12);
-                int bHeight = bWidth * height / width;
-                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
-                params.width = bWidth;
-                params.height = bHeight;
-            }
-
-            @Override
-            public void onLoadingCancelled(String s, View view) {
-
-            }
-        });
+        ImageLoader.getInstance().displayImage(photos, viewHolder.ivContent, ImageLoaderOptions.optionsAdapterDefault);
+//        ImageLoader.getInstance().displayImage(photos, viewHolder.ivContent, ImageLoaderOptions.optionsAdapterDefault, new ImageLoadingListener() {
+//            @Override
+//            public void onLoadingStarted(String s, View view) {
+//
+//            }
+//
+//            @Override
+//            public void onLoadingFailed(String s, View view, FailReason failReason) {
+//
+//            }
+//
+//            @Override
+//            public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+//                if (bitmap == null)
+//                    return;
+//                int width = bitmap.getWidth();
+//                int height = bitmap.getHeight();
+//                int bWidth = DisplayUtil.screenWidth - DisplayUtil.dp2px(2 * 12);
+//                int bHeight = bWidth * height / width;
+//                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
+//                params.width = bWidth;
+//                params.height = bHeight;
+//            }
+//
+//            @Override
+//            public void onLoadingCancelled(String s, View view) {
+//
+//            }
+//        });
         return convertView;
     }
 

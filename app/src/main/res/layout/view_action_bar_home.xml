@@ -30,7 +30,7 @@
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/tv_action_fenlei"
         android:layout_toRightOf="@+id/iv_action_scan"
-        android:background="@drawable/bg_rectangle_ffffff">
+        android:background="@drawable/bg_rectangle15_ffffff">
 
         <ImageView
             android:layout_width="@dimen/margin_18"

@@ -8,25 +8,25 @@
         android:id="@+id/tv_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:text="2018-02-06 15:15" />
+        android:layout_marginTop="@dimen/margin_6"
+        android:text="更新时间：2018-02-06 15:15" />
 
     <RelativeLayout
         android:id="@+id/layout_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_time"
-        android:layout_marginTop="@dimen/margin_2">
+        android:layout_marginTop="@dimen/margin_6">
 
         <RelativeLayout
             android:id="@+id/layout_image"
-            android:layout_width="80dp"
-            android:layout_height="60dp">
+            android:layout_width="100dp"
+            android:layout_height="80dp">
 
             <ImageView
                 android:id="@+id/iv_content"
-                android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
                 android:background="@drawable/bg_rectangle_activty"
                 android:scaleType="centerCrop"
                 android:visibility="visible" />
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_2"
-                android:text="遗失地址：成都市高新区神仙树缤纷广场" />
+                android:text="遗失地址：成都市高新区" />
 
         </LinearLayout>
     </RelativeLayout>

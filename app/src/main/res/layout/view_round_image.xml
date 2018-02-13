@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/margin_180">
+
+    <com.pet.travel.view.imageview.RoundAngleImageView
+        android:id="@+id/dialog_pet_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_180"
+        android:scaleType="centerCrop"
+        tools:roundHeight="@dimen/margin_15"
+        tools:roundWidth="@dimen/margin_15"
+        tools:roundLeftBottom="false"
+        tools:roundRightBottom="false">
+
+    </com.pet.travel.view.imageview.RoundAngleImageView>
+</RelativeLayout>
+

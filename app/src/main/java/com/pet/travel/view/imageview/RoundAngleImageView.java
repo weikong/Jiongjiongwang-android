@@ -17,6 +17,7 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.pet.travel.R;
+import com.pet.travel.util.DisplayUtil;
 
 
 /**
@@ -65,8 +66,8 @@ public class RoundAngleImageView extends ImageView {
             Log.e("RoundAngleImageView", "  roundWidth = " + roundWidth);
         } else {
             float density = context.getResources().getDisplayMetrics().density;
-            roundWidth = (int) (roundWidth * density);
-            roundHeight = (int) (roundHeight * density);
+            roundWidth = DisplayUtil.dp2px(roundWidth);
+            roundHeight = DisplayUtil.dp2px(roundHeight);
             Log.e("RoundAngleImageView", "density = " + density + "  roundWidth = " + roundWidth);
         }
 

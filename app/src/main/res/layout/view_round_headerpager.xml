@@ -5,11 +5,10 @@
     android:layout_height="match_parent">
 
     <com.pet.travel.view.imageview.RoundAngleImageView
-        android:id="@+id/iv_content"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_180"
         android:scaleType="centerCrop"
-        android:layout_margin="@dimen/margin_12"
+        android:src="@mipmap/home_item_bg"
         tools:roundHeight="@dimen/margin_15"
         tools:roundWidth="@dimen/margin_15"
         tools:roundLeftBottom="false"
@@ -17,16 +16,10 @@
 
     </com.pet.travel.view.imageview.RoundAngleImageView>
 
-    <TextView
-        android:id="@+id/tv_title"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/iv_content"
-        android:layout_marginLeft="@dimen/margin_12"
-        android:layout_marginRight="@dimen/margin_12"
-        android:background="#55000000"
-        android:textColor="@color/app_page_bkg"
-        android:padding="@dimen/margin_8"
-        android:text="adf" />
+        android:layout_height="@dimen/margin_180">
 
+    </android.support.v4.view.ViewPager>
 </RelativeLayout>

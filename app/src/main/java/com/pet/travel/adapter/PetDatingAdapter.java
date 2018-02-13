@@ -78,9 +78,9 @@ public class PetDatingAdapter extends BaseAdapter {
             String mSex = item.getSex();
             if (!TextUtils.isEmpty(mSex)) {
                 if (mSex.equals("2"))
-                    mSex = "母";
+                    mSex = "公主";
                 else
-                    mSex = "公";
+                    mSex = "太子";
                 viewHolder.tv_pet_sex.setText(mSex);
                 viewHolder.tv_pet_sex.setVisibility(View.VISIBLE);
             } else {

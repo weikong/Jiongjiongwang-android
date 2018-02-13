@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.alibaba.fastjson.JSON;
@@ -15,6 +17,8 @@ import com.pet.travel.bean.ResultTaskBean;
 import com.pet.travel.config.ServerConfig;
 import com.pet.travel.okhttp.HttpTaskUtil;
 import com.pet.travel.okhttp.OkHttpClientManager;
+import com.pet.travel.view.action.ActionBarJiongView;
+import com.pet.travel.view.dialog.fragment.DialogPetDatingFragment;
 import com.squareup.okhttp.Request;
 
 import java.io.IOException;
@@ -22,15 +26,15 @@ import java.util.List;
 
 /**
  * 宠物约会
- * */
+ */
 public class PetDatingActivity extends BaseUIActivity {
 
     private ListView listView;
     private PetDatingAdapter adapter;
     private HttpTaskUtil httpTaskUtil;
 
-    public static void startActivity(Context context){
-        Intent intent = new Intent(context,PetDatingActivity.class);
+    public static void startActivity(Context context) {
+        Intent intent = new Intent(context, PetDatingActivity.class);
         context.startActivity(intent);
     }
 
@@ -38,16 +42,27 @@ public class PetDatingActivity extends BaseUIActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_dating);
-        listView = (ListView)findViewById(R.id.listview);
+        ActionBarJiongView actionBar = (ActionBarJiongView)findViewById(R.id.action_bar);
+        actionBar.setTvTitle("相亲");
+        listView = (ListView) findViewById(R.id.listview);
         adapter = new PetDatingAdapter(this);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                PetDatingBean bean = adapter.getItem(i);
+                DialogPetDatingFragment dialogWeatherFragment = DialogPetDatingFragment.newInstance(bean);
+                if (!dialogWeatherFragment.isVisible())
+                    dialogWeatherFragment.show(getSupportFragmentManager(), "DialogPetDatingFragment");
+            }
+        });
         loadDataTask();
     }
 
-    private void loadDataTask(){
+    private void loadDataTask() {
         if (httpTaskUtil == null)
             httpTaskUtil = new HttpTaskUtil();
-        httpTaskUtil.QueryDataTask(ServerConfig.HTTP_DATING_QUERY,pageNum,pageSize, new OkHttpClientManager.StringCallback() {
+        httpTaskUtil.QueryDataTask(ServerConfig.HTTP_DATING_QUERY, pageNum, pageSize, new OkHttpClientManager.StringCallback() {
             @Override
             public void onFailure(Request request, IOException e) {
                 e.printStackTrace();

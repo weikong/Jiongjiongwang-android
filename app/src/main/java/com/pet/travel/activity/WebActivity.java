@@ -11,9 +11,11 @@ import android.webkit.WebViewClient;
 
 import com.pet.travel.R;
 import com.pet.travel.activity.base.BaseUIActivity;
+import com.pet.travel.view.action.ActionBarJiongView;
 
 public class WebActivity extends BaseUIActivity {
 
+    private ActionBarJiongView actionBar;
     private WebView webView;
     private String url = "http://mp.weixin.qq.com/mp/homepage?__biz=MjM5MDIyNTg2NQ==&hid=2&sn=36308dd34fd52747fc5088aac8aa1474#wechat_redirect";
 
@@ -27,6 +29,7 @@ public class WebActivity extends BaseUIActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 //        url = getIntent().getStringExtra("url");
+        actionBar = (ActionBarJiongView)findViewById(R.id.action_bar);
         initWebView();
     }
 
@@ -71,6 +74,11 @@ public class WebActivity extends BaseUIActivity {
                 //设置网页在webview控件中打开,false在浏览器中打开
                 view.loadUrl(url);
                 return true;
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                actionBar.setTvTitle(view.getTitle());
             }
         });
         webView.loadUrl(url);

@@ -15,6 +15,7 @@ import com.pet.travel.bean.ResultTaskBean;
 import com.pet.travel.config.ServerConfig;
 import com.pet.travel.okhttp.HttpTaskUtil;
 import com.pet.travel.okhttp.OkHttpClientManager;
+import com.pet.travel.view.action.ActionBarJiongView;
 import com.squareup.okhttp.Request;
 
 import java.io.IOException;
@@ -38,6 +39,8 @@ public class PetLookForActivity extends BaseUIActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_lookfor);
+        ActionBarJiongView actionBar = (ActionBarJiongView)findViewById(R.id.action_bar);
+        actionBar.setTvTitle("寻犬启示");
         listView = (ListView)findViewById(R.id.listview);
         adapter = new PetLookForAdapter(this);
         listView.setAdapter(adapter);

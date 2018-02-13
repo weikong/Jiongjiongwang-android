@@ -31,4 +31,9 @@
         <item name="android:backgroundDimEnabled">false</item>
         <!-- 背景是否模糊 -->
     </style>
+
+    <style name="NearbyDialogFragment">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_dialog_out</item>
+    </style>
 </resources>

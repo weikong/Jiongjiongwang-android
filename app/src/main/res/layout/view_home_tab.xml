@@ -78,7 +78,7 @@
             android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
             android:textSize="12sp"
-            android:text="红十字" />
+            android:text="名犬分类" />
     </LinearLayout>
 
     <LinearLayout
@@ -103,7 +103,7 @@
             android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
             android:textSize="12sp"
-            android:text="婚配" />
+            android:text="相亲" />
     </LinearLayout>
 
     <LinearLayout

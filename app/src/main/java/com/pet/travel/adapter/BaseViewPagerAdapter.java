@@ -3,7 +3,6 @@ package com.pet.travel.adapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import java.util.List;
 
@@ -11,9 +10,9 @@ import java.util.List;
  * Created by xinzhendi-031 on 2017/11/9.
  */
 public class BaseViewPagerAdapter extends PagerAdapter {
-    private List<ImageView> viewList;// view数组
+    private List<View> viewList;// view数组
 
-    public BaseViewPagerAdapter setViewList(List<ImageView> viewList) {
+    public BaseViewPagerAdapter setViewList(List<View> viewList) {
         this.viewList = viewList;
         return this;
     }

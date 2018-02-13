@@ -14,6 +14,7 @@ import com.pet.travel.bean.PetServiceBean;
 import com.pet.travel.bean.ResultTaskBean;
 import com.pet.travel.okhttp.HttpTaskUtil;
 import com.pet.travel.okhttp.OkHttpClientManager;
+import com.pet.travel.view.action.ActionBarJiongView;
 import com.squareup.okhttp.Request;
 
 import java.io.IOException;
@@ -37,6 +38,8 @@ public class PetFosterCareActivity extends BaseUIActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_foster_care);
+        ActionBarJiongView actionBar = (ActionBarJiongView)findViewById(R.id.action_bar);
+        actionBar.setTvTitle("寄养");
         listView = (ListView) findViewById(R.id.listview);
         adapter = new PetBeautyAdapter(this);
         listView.setAdapter(adapter);

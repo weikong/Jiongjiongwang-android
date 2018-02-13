@@ -94,7 +94,7 @@ public class PetLookForAdapter extends BaseAdapter {
                 viewHolder.tv_name.setText("名字："+item.getName());
             }
             viewHolder.tv_address.setText("遗失地址："+item.getAddress());
-            viewHolder.tv_time.setText(item.getTime().toLocaleString());
+            viewHolder.tv_time.setText("更新时间："+item.getTime().toLocaleString());
             if (!TextUtils.isEmpty(item.getHeadurl()))
                 photos = item.getHeadurl();
             if (!TextUtils.isEmpty(photos)) {
