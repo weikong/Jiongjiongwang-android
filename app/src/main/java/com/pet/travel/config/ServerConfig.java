@@ -12,6 +12,12 @@ public class ServerConfig {
 //    public static String HTTP_ROOT = "http://192.168.31.90:9090/";
     /**
      * 公司 IP
+     * 端口：80
+     */
+//    public static String HTTP_ROOT = "http://172.16.0.138/";
+    /**
+     * 公司 IP
+     * 端口：9090
      */
     public static String HTTP_ROOT = "http://172.16.0.138:9090/";
     /**

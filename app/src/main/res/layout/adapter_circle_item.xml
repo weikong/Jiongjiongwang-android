@@ -75,9 +75,9 @@
             <ImageView
                 android:id="@+id/iv_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="160dp"
                 android:scaleType="centerCrop"
-                android:visibility="invisible" />
+                android:visibility="gone" />
 
             <com.pet.travel.view.CustomGridView
                 android:id="@+id/gridview"
@@ -87,7 +87,7 @@
                 android:numColumns="3"
                 android:scrollbars="none"
                 android:verticalSpacing="@dimen/margin_1"
-                android:visibility="invisible">
+                android:visibility="gone">
 
             </com.pet.travel.view.CustomGridView>
         </RelativeLayout>

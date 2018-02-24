@@ -21,7 +21,6 @@ import com.pet.travel.bean.ResultTaskBean;
 import com.pet.travel.okhttp.HttpTaskUtil;
 import com.pet.travel.view.jiong.JiongHeaderView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -110,14 +109,6 @@ public class JiongFragment extends Fragment {
         listView.addHeaderView(new JiongHeaderView(getActivity()));
         adapter = new CircleAdapter(getActivity());
         listView.setAdapter(adapter);
-    }
-
-    public void loadData() {
-        List<CircleBean> datas = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            datas.add(null);
-        }
-        adapter.setData(datas);
     }
 
     private Handler handler = new Handler() {

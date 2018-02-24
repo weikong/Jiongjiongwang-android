@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_ffffff"
@@ -15,12 +16,26 @@
         android:orientation="vertical"
         android:padding="@dimen/margin_4">
 
-        <ImageView
-            android:id="@+id/iv_tab_1"
+        <RelativeLayout
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/au4" />
+            android:layout_height="40dp">
+
+            <com.pet.travel.view.imageview.FilterColorImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/au4"
+                app:filterColor="#FDA801"/>
+
+            <ImageView
+                android:id="@+id/iv_tab_1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_pet_mr"/>
+
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,12 +55,26 @@
         android:orientation="vertical"
         android:padding="@dimen/margin_4">
 
-        <ImageView
-            android:id="@+id/iv_tab_2"
+        <RelativeLayout
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/au5" />
+            android:layout_height="40dp">
+
+            <com.pet.travel.view.imageview.FilterColorImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/au1"
+                app:filterColor="#FD5760"/>
+
+            <ImageView
+                android:id="@+id/iv_tab_2"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_pet_jy"/>
+
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,12 +94,26 @@
         android:orientation="vertical"
         android:padding="@dimen/margin_4">
 
-        <ImageView
-            android:id="@+id/iv_tab_3"
+        <RelativeLayout
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/au6" />
+            android:layout_height="40dp">
+
+            <com.pet.travel.view.imageview.FilterColorImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/au1"
+                app:filterColor="#3FBDFE"/>
+
+            <ImageView
+                android:id="@+id/iv_tab_3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_launcher"/>
+
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,7 +121,7 @@
             android:layout_marginTop="@dimen/margin_2"
             android:gravity="center"
             android:textSize="12sp"
-            android:text="名犬分类" />
+            android:text="名犬" />
     </LinearLayout>
 
     <LinearLayout
@@ -89,13 +132,27 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/margin_4">
-
-        <ImageView
-            android:id="@+id/iv_tab_4"
+        <RelativeLayout
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/au7" />
+            android:layout_height="40dp">
+
+            <com.pet.travel.view.imageview.FilterColorImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/au1"
+                app:filterColor="#FA3F9B"/>
+
+            <com.pet.travel.view.imageview.FilterColorImageView
+                android:id="@+id/iv_tab_4"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/tab_icon_message_hover"
+                app:filterColor="@color/color_ffffff"/>
+
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -114,13 +171,25 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/margin_4">
-
-        <ImageView
-            android:id="@+id/iv_tab_5"
+        <RelativeLayout
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/au8" />
+            android:layout_height="40dp">
+
+            <com.pet.travel.view.imageview.FilterColorImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/au1"
+                app:filterColor="#F35E34"/>
+
+            <ImageView
+                android:id="@+id/iv_tab_5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_pet_lookfor"/>
+
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"

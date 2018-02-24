@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import com.pet.travel.R;
 import com.pet.travel.activity.MainActivity;
 import com.pet.travel.activity.ProductCategoryActivity;
+import com.pet.travel.activity.WebH5Activity;
 
 /**
  * Created by xinzhendi-031 on 2018/1/26.
@@ -51,6 +52,10 @@ public class ActionBarHomeView extends RelativeLayout implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_action_scan:
+                if (getContext() instanceof MainActivity){
+                    Intent intent = new Intent(getContext(), WebH5Activity.class);
+                    getContext().startActivity(intent);
+                }
                 break;
             case R.id.layout_action_search:
                 break;

@@ -89,6 +89,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.WebActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.WebH5Activity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

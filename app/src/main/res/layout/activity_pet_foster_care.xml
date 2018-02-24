@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/app_page_bkg">
 
     <com.pet.travel.view.action.ActionBarJiongView
         android:id="@+id/action_bar"
@@ -18,6 +19,7 @@
         android:layout_below="@+id/action_bar"
         android:divider="@color/transparent"
         android:dividerHeight="0dp"
+        android:listSelector="@color/transparent"
         android:scrollbars="none"></ListView>
 
 </RelativeLayout>
