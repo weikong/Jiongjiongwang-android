@@ -14,7 +14,6 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.pet.travel.R;
 import com.pet.travel.util.DisplayUtil;
@@ -25,7 +24,7 @@ import com.pet.travel.util.DisplayUtil;
  *
  * @author Administrator
  */
-public class RoundAngleImageView extends ImageView {
+public class RoundAngleImageView extends android.support.v7.widget.AppCompatImageView {
 
     private Paint paint;
     /**

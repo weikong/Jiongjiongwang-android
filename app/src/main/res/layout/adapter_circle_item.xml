@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/iv_header_icon"
-            android:layout_width="@dimen/margin_50"
-            android:layout_height="@dimen/margin_50"
+            android:layout_width="@dimen/margin_45"
+            android:layout_height="@dimen/margin_45"
             android:layout_centerVertical="true"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_launcher" />
@@ -33,8 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="欧阳清风"
-                android:textColor="@color/color_333333"
-                android:textSize="16sp" />
+                android:textColor="@color/color_333333" />
 
             <TextView
                 android:id="@+id/tv_time"
@@ -43,7 +42,7 @@
                 android:layout_marginTop="@dimen/margin_2"
                 android:text="2017-12-08 10:36"
                 android:textColor="@color/color_666666"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -60,7 +59,6 @@
             android:id="@+id/tv_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_4"
             android:text="艾弗森法撒旦法是范德萨发沙发沙发，斯蒂芬第三阿斯顿发射点发沙发发，沙发沙发沙发沙发沙发上方啊啊是范玮琪；非分之想股份公司发发生大发发撒的发生非。"
             android:textColor="@color/color_333333"
             android:textSize="14sp" />
@@ -98,10 +96,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/layout_imgs"
             android:layout_marginBottom="@dimen/margin_4"
-            android:layout_marginTop="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_2"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/margin_2"
+            android:drawableLeft="@mipmap/ic_address"
             android:text="成都市高新区，天府软件园"
-            android:textColor="@color/color_theme"
-            android:textSize="12sp" />
+            android:textColor="@color/color_B3B3B3"
+            android:textSize="10sp" />
     </RelativeLayout>
 
     <View
